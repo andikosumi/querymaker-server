@@ -8,5 +8,7 @@ WORKDIR /code
 # Install dependencies
 COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
+RUN pipenv install psycopg2-binary==2.8.4
+
 # Copy project
 COPY . /code/
